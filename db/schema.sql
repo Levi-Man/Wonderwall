@@ -28,7 +28,7 @@ CREATE TABLE Albums (
     ArtistID INT NOT NULL,
     YearID INT NOT NULL,
     FOREIGN KEY (ArtistID) REFERENCES Artists(ArtistID),
-    FOREIGN KEY (YearID) REFERENCES Years(YearID)
+    FOREIGN KEY (YearID) REFERENCES Year(YearID)
 );
 
 -- Create Songs table
