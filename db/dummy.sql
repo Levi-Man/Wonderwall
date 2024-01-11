@@ -62,14 +62,3 @@ INSERT INTO Albums (AlbumTitle, ArtistId, YearId) VALUES
 ("Artist Single", 4, 4),
 ("Music Box", 6, 3)
 ;
-
-
--- -- artists would have many songs, would have many genres, would have many albums
-
--- genres
-
--- year
-
--- album has one artist, has one year
-
--- song has one artist
