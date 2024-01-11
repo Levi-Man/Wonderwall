@@ -25,7 +25,11 @@ CREATE TABLE Album (
     AlbumTitle VARCHAR(100) NOT NULL,
     ArtistID INT NOT NULL,
     YearID INT NOT NULL,
+<<<<<<< HEAD
     FOREIGN KEY (ArtistID) REFERENCES Artist(ArtistID),
+=======
+    FOREIGN KEY (ArtistID) REFERENCES Artists(ArtistID),
+>>>>>>> main
     FOREIGN KEY (YearID) REFERENCES Year(YearID)
 );
 
