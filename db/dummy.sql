@@ -1,4 +1,4 @@
-INSERT INTO Artists (ArtistName) VALUES
+INSERT INTO Artist (ArtistName) VALUES
 -- 1
 ("Nirvana"),
 -- 2
@@ -23,7 +23,7 @@ INSERT INTO Artists (ArtistName) VALUES
 ("Madonna")
 ;
 
-INSERT INTO Songs (SongTitle, ArtistId) VALUES
+INSERT INTO Song (SongTitle, ArtistID) VALUES
 ("I'll Remember", 11),
 ("Again", 10),
 ("Don't Turn Around", 2),
@@ -39,7 +39,7 @@ INSERT INTO Songs (SongTitle, ArtistId) VALUES
 ("Smells Like Teen Spirit", 1),
 ;
 
-INSERT INTO Genres (GenreName) VALUES 
+INSERT INTO Genre (GenreName) VALUES 
 ("Pop"),
 ("Hip-Hop"),
 ("R&B"),
@@ -56,7 +56,7 @@ INSERT INTO Year (YearValue) VALUES
 (1995)
 ;
 
-INSERT INTO Albums (AlbumTitle, ArtistId, YearId) VALUES
+INSERT INTO Album (AlbumTitle, ArtistID, YearID) VALUES
 ("Happy Nation", 2, 4),
 ("Nevermind", 1, 1),
 ("Artist Single", 4, 4),
@@ -66,7 +66,7 @@ INSERT INTO Albums (AlbumTitle, ArtistId, YearId) VALUES
 
 -- -- artists would have many songs, would have many genres, would have many albums
 
--- genres
+-- genre
 
 -- year
 
