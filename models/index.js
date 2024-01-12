@@ -1,5 +1,5 @@
 const Album = require('./Album');
-const Artist = require('./Artist');
+const Artist = require('./Album');
 const Genre = require('./Genre');
 const Song = require('./Song');
 const Year = require('./Year');

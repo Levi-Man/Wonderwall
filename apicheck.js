@@ -66,12 +66,12 @@ let check = async () => {
         const year = document.getElementById("year");
         year.innerHTML = yearHtml;
 
-        // const albumData = await fetch('http://musicbrainz.org/ws/2/release-group/?query=alias:queen&primarytype:album&release:queen&fmt=json');
-        // const jsonAlbum = await albumData.json();
+        const albumData = await fetch('http://musicbrainz.org/ws/2/release-group/?query=alias:queen&primarytype:album&release:queen&fmt=json');
+        const jsonAlbum = await albumData.json();
         // console.log(jsonAlbum);
-        // const albumHtml = `<h2>${jsonAlbum.release - groups[0].title}</h2>`;
-        // const album = document.getElementById("album");
-        // album.innerHTML = albumHtml;
+        const albumHtml = `<h2>${jsonAlbum["release-groups"][0].title}</h2>`;
+        const album = document.getElementById("album");
+        album.innerHTML = albumHtml;
 
         const cover = await fetch('https://coverartarchive.org/release/4119c891-2706-3748-ae10-44976b191f2d');
         const jsonCover = await cover.json();
