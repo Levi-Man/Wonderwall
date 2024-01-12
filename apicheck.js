@@ -57,7 +57,7 @@ let check = async () => {
         const genre = document.getElementById("genre");
         genre.innerHTML = genreHtml;
 
-        // Year lookup "1994"
+        // Year lookup "1994s"
 
         const yearData = await fetch('http://musicbrainz.org/ws/2/release/?query=date:1994-02-01&fmt=json');
         const jsonYear = await yearData.json();
