@@ -14,6 +14,14 @@ Genre.init(
         genre_name: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        artist_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            reference: {
+                model: 'artist',
+                key: 'id'
+            }
         }
     },
     {
