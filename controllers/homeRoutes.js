@@ -17,15 +17,37 @@ router.get('/artist/:id', async (req, res) => {
         });
         // console.log(artistData);
         const jsonArtist = await artistData.json();
+
+        const artistName = jsonArtist["artists"][0].name;
+
+        const releasesData = await fetch(`http://musicbrainz.org/ws/2/release/?query=arid:${jsonArtist["artists"][0].id}&primarytype=Album&fmt=json`, {
+            method: 'GET',
+            headers: {
+                'user-agent': 'Wonderwall/<1.0> ( morgs99@gmail.com )'
+            }
+        });
+
+        const jsonReleases = await releasesData.json();
+
+        const albums = jsonReleases.releases.map(release => ({
+            title: release.title,
+            releaseDate: release.date,
+        }));
+
+        const responseData = {
+            artistName,
+            albums,
+        };
         // console.log(jsonArtist);
-        res.status(200).json(jsonArtist["artists"][0].name);
+        res.status(200).json(responseData);
 
         // res.render('artist', {
         //     jsonArtist,
         //     logged_in: req.session.logged_in
         // });
     } catch (err) {
-        res.status(500).json(err);
+        console.error(err)
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
