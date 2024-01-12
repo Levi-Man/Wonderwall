@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+  <title>Wonderwall</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <video loop="" muted="" autoplay="" playsinline="" class="background-video">
+    <source src="../Assets/Images/note.mp4">
+  </video>
+  <header class="display-flex justify-space-between align-center p-2">
+    <h1 class="align-center">Anyway, here's Wonderwall...</h1>
+    {{#if logged_in}}
+    <nav>
+      <button class="btn" id="logout">logout</button>
+    </nav>
+    {{/if}}
+  </header>
+  <main class="container-fluid mt-5">
+    <div class="row d-flex align-items-stretch">
+      <div class="col-4">
+        <div class="card bg-dark">
+          <h3 class="header">Username</h3>
+          <h4>Saved Artists</h4>
+
+          <h4>Saved Songs</h4>
+
+          <h4>Favorite Genre</h4>
+
+          <h4>Saved Top 10</h4>
+          <ul>
+            <li>Song 1</li>
+            <li>Song 2</li>
+            <li>Song 3</li>
+            <li>Song 4</li>
+            <li>Song 5</li>
+            <li>Song 6</li>
+            <li>Song 7</li>
+            <li>Song 8</li>
+            <li>Song 9</li>
+            <li>Song 10</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- start of chart page -->
+      <div class="col-8">
+
+        <div class="card bg-dark search-card" id="chart">
+
+
+        </div>
+
+      </div>
+  </main>
+  <footer></footer>
+  <script src="../apicheck.js"></script>
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
