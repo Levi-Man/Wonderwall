@@ -1,105 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wonderwall</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../../public/css/style.css" />
-  </head>
 
-  <body class="text-light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+    <title>Wonderwall</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../public/css/style.css" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <video loop="" muted="" autoplay="" playsinline="" class="background-video">
+        <source src="../../Assets/Images/136709 (1440p).mp4">
+    </video>
     <header class="display-flex justify-space-between align-center p-2">
-      <h1 class="align-center">Anyway, here's Wonderwall...</h1>
-      {{#if logged_in}}
-      <nav>
-        <button class="btn" id="logout">logout</button>
-      </nav>
-      {{/if}}
+        <h1 class="align-center">Anyway, here's Wonderwall...</h1>
+        {{#if logged_in}}
+        <nav>
+            <button class="btn" id="logout">logout</button>
+        </nav>
+        {{/if}}
     </header>
     <main class="container-fluid mt-5">
-      <!-- INSERT PARTIALS HERE -->
         <div class="row d-flex align-items-stretch">
-      <div class="col-4">
-        <div class="card bg-dark">
-          <h3 class = "header">Username</h3>
-          <h4>Saved Artists</h4>
-          <ul>
-            <li>Artist Name</li>
-          </ul>
-          <h4>Saved Songs</h4>
-          <ul>
-            <li>Song Title</li>
-          </ul>
-          <h4>Favorite Genre</h4>
-          <ul>
-            <li>Genre</li>
-          </ul>
-          <h4>Saved Top 10</h4>
-          <ul>
-            <li>Song Names</li>
-          </ul>
+            <div class="col-4">
+                <div class="card bg-dark">
+                    <h3 class="header">Username</h3>
+                    <h4>Saved Artists</h4>
+
+                    <h4>Saved Songs</h4>
+
+                    <h4>Favorite Genre</h4>
+
+                    <h4>Saved Top 10</h4>
+                    <ul>
+                        <li>Song 1</li>
+                        <li>Song 2</li>
+                        <li>Song 3</li>
+                        <li>Song 4</li>
+                        <li>Song 5</li>
+                        <li>Song 6</li>
+                        <li>Song 7</li>
+                        <li>Song 8</li>
+                        <li>Song 9</li>
+                        <li>Song 10</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-8">
+
+                <div class="row justify-space-between-md">
+                    <div class="login-card">
+                      <h2 class="page-title">Login</h2>
+                      <form class="form login-form">
+                        <div class="form-group d-flex justify-content-between">
+                          <label for="email-login">Email:</label>
+                          <input class="form-input" type="text" id="email-login" />
+                        </div>
+                        <div class="form-group d-flex justify-content-between">
+                          <label for="password-login">Password:</label>
+                          <input class="form-input" type="password" id="password-login" />
+                        </div>
+                        <div class="form-group d-flex justify-content-between">
+                          <button class="btn btn-primary" type="submit">login</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="login-card">
+                      <h2 class="page-title">Signup</h2>
+                      <form class="form signup-form ">
+                        <div class="form-group d-flex justify-content-between">
+                          <label for="username-signup">Username:</label>
+                          <input class="form-input" type="text" id="username-signup" />
+                        </div>
+                        <div class="form-group d-flex justify-content-between">
+                          <label for="email-signup">Email:</label>
+                          <input class="form-input" type="text" id="email-signup" />
+                        </div>
+                        <div class="form-group d-flex justify-content-between">
+                          <label for="password-signup">Password:</label>
+                          <input class="form-input" type="password" id="password-signup" />
+                        </div>
+                        <div class="form-group">
+                          <button class="btn btn-primary" type="submit">signup</button>
+                        </div>
+                      </form>
+                    </div>
         </div>
-      </div>
-      <div class="col-8">
-        <!-- <h2>Ready?</h2>
-        <div class="row">
-          <h3>ARTISTS SONGS</h3>
-        </div> -->
-        <h2>Login</h2>
-
-        <div class="row justify-space-between-md">
-            <div class="login-card">
-              <h2 class="page-title">Login</h2>
-              <form class="form login-form">
-                <div class="form-group d-flex justify-content-between">
-                  <label for="email-login">Email:</label>
-                  <input class="form-input" type="text" id="email-login" />
-                </div>
-                <div class="form-group d-flex justify-content-between">
-                  <label for="password-login">Password:</label>
-                  <input class="form-input" type="password" id="password-login" />
-                </div>
-                <div class="form-group d-flex justify-content-between">
-                  <button class="btn btn-primary" type="submit">login</button>
-                </div>
-              </form>
-            </div>
-            <div class="login-card">
-              <h2 class="page-title">Signup</h2>
-              <form class="form signup-form ">
-                <div class="form-group d-flex justify-content-between">
-                  <label for="username-signup">Username:</label>
-                  <input class="form-input" type="text" id="username-signup" />
-                </div>
-                <div class="form-group d-flex justify-content-between">
-                  <label for="email-signup">Email:</label>
-                  <input class="form-input" type="text" id="email-signup" />
-                </div>
-                <div class="form-group d-flex justify-content-between">
-                  <label for="password-signup">Password:</label>
-                  <input class="form-input" type="password" id="password-signup" />
-                </div>
-                <div class="form-group">
-                  <button class="btn btn-primary" type="submit">signup</button>
-                </div>
-              </form>
-            </div>
-          </div>
-          
-          <script src="./js/login.js"></script>
-      </div>
-    </div>
-
-      <!-- UNTIL HERE -->
     </main>
     <footer></footer>
 
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
-  </body>
+</body>
+
 </html>
