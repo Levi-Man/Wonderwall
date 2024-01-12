@@ -3,32 +3,82 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Registry</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/jass.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+  <title>Wonderwall</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../public/css/style.css" />
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
+  <video loop="" muted="" autoplay="" playsinline="" class="background-video">
+    <source src="../../Assets/Images/note.mp4">
+  </video>
   <header class="display-flex justify-space-between align-center p-2">
-    <h1>Anyway Here's Wonderwall</h1>
+    <h1 class="align-center">Anyway, here's Wonderwall...</h1>
     {{#if logged_in}}
     <nav>
-      <button type="button" class="btn btn-outline-secondary btn-sm" id="logout">logout</button>
+      <button class="btn" id="logout">logout</button>
     </nav>
     {{/if}}
   </header>
-  <main class="container container-fluid mt-5">{{{ body }}}</main>
+  <main class="container-fluid mt-5">
+    <div class="row d-flex align-items-stretch">
+      <div class="col-4">
+        <div class="card bg-dark">
+          <h3 class="header">Username</h3>
+          <h4>Saved Artists</h4>
+
+          <h4>Saved Songs</h4>
+
+          <h4>Favorite Genre</h4>
+
+          <h4>Saved Top 10</h4>
+          <ul>
+            <li>Song 1</li>
+            <li>Song 2</li>
+            <li>Song 3</li>
+            <li>Song 4</li>
+            <li>Song 5</li>
+            <li>Song 6</li>
+            <li>Song 7</li>
+            <li>Song 8</li>
+            <li>Song 9</li>
+            <li>Song 10</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-8">
+
+        <div class="card bg-dark search-card">
+          <h3 class="header">Ready?</h3>
+          <h4 class="d-flex justify-content-end">Search</h4>
+          <form class="form signup-form ">
+              <div class="form-group d-flex justify-content-end">
+                  <label for="username-signup">Artist: </label>
+                  <input class="form-input" type="text" id="artist-search" />
+              </div>
+              <div class="form-group d-flex justify-content-end">
+                  <label for="email-signup">Song: </label>
+                  <input class="form-input" type="text" id="song-search" />
+              </div>
+              <div class="form-group d-flex justify-content-end">
+                  <label for="password-signup">Year: </label>
+                  <input class="form-input" type="password" id="year-search" />
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-primary d-flex justify-content-end" type="submit">Search</button>
+              </div>
+          </form>
+      </div>
+
+      </div>
+  </main>
   <footer></footer>
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>
