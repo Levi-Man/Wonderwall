@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS music_db;
 CREATE DATABASE music_db;
 
-USE music_db;
+/* USE music_db;
 
 CREATE TABLE Artist (
     ArtistID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -25,11 +25,7 @@ CREATE TABLE Album (
     AlbumTitle VARCHAR(100) NOT NULL,
     ArtistID INT NOT NULL,
     YearID INT NOT NULL,
-<<<<<<< HEAD
     FOREIGN KEY (ArtistID) REFERENCES Artist(ArtistID),
-=======
-    FOREIGN KEY (ArtistID) REFERENCES Artists(ArtistID),
->>>>>>> main
     FOREIGN KEY (YearID) REFERENCES Year(YearID)
 );
 
@@ -40,4 +36,4 @@ CREATE TABLE Song (
     YearID INT NOT NULL,
     FOREIGN KEY (ArtistID) REFERENCES Artist(ArtistID),
     FOREIGN KEY (YearID) REFERENCES Year(YearID)
-);
+); */
