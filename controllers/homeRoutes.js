@@ -8,6 +8,7 @@ const { Artist, Genre, Song, Year, Album } = require('../models');
 // });
 
 router.get('/artist/:id', async (req, res) => {
+   
     try {
         const artistData = await fetch(`http://musicbrainz.org/ws/2/artist/?query=${req.params.id}&method=indexed&inc=aliases&fmt=json`, {
             method: 'GET',
@@ -38,7 +39,7 @@ router.get('/artist/:id', async (req, res) => {
             artistName,
             albums,
         };
-        // console.log(jsonArtist);
+        console.log(jsonArtist);
         res.status(200).json(responseData);
 
         // res.render('artist', {
