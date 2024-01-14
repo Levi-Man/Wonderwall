@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 
 // GET one artist
-router.get('/artist/:id', async (req, res) => {
+router.get('/artist/:id', withAuth, async (req, res) => {
     try {
         const artistData = await Artist.findByPk(req.params.id, {
             include: [
