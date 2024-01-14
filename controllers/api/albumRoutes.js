@@ -4,10 +4,10 @@ const { Artist, Genre, Song, Year, Album } = require("../../models");
 
 
 router.get("/artist/:id/albums", async (req, res) => {
+    // Fetch albums from MusicBrainz API using the artis's ID
     try {
-
         const albumsData = await fetch(
-            `http://musicbrainz.org/ws/2/release/?query=arid:${req.params.id}&primarytype=album&fmt=json`,
+            `http://musicbrainz.org/ws/2/release/?artist=${req.params.id}&primarytype=album&fmt=json`,
             {
                 method: "GET",
                 headers: {
@@ -15,7 +15,7 @@ router.get("/artist/:id/albums", async (req, res) => {
                 },
             }
         );
-
+// console.log(req.params);
         const jsonAlbums = await albumsData.json();
 
         const albums = jsonAlbums.releases.map((release) => ({
@@ -33,7 +33,7 @@ router.get("/artist/:id/albums", async (req, res) => {
 router.get('/album/:id/songs', async (req, res) => {
     try {
         // Fetch songs from MusicBrainz API using the album's ID
-        const songsData = await fetch(`http://musicbrainz.org/ws/2/recording/?query=rgid:${req.params.id}&fmt=json`, {
+        const songsData = await fetch(`http://musicbrainz.org/ws/2/recording/?artist=${req.params.id}&fmt=json`, {
             method: 'GET',
             headers: {
                 'user-agent': 'Wonderwall/<1.0> ( morgs99@gmail.com )'
