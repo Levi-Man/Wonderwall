@@ -3,9 +3,9 @@ const { Artist, Genre, Song, Year, Album } = require('../models');
 // const withAuth = require('../utils/auth');
 
 
-router.get('/', async (req, res) => {
-    console.log('connected');
-});
+// router.get('/', async (req, res) => {
+//     console.log('connected');
+// });
 
 router.get('/artist/:id', async (req, res) => {
     try {
@@ -20,7 +20,7 @@ router.get('/artist/:id', async (req, res) => {
 
         const artistName = jsonArtist["artists"][0].name;
 
-        const releasesData = await fetch(`http://musicbrainz.org/ws/2/release/?query=arid:${jsonArtist["artists"][0].id}&primarytype=Album&fmt=json`, {
+        const releasesData = await fetch(`http://musicbrainz.org/ws/2/release/?query=arid:${jsonArtist["artists"][0].id}&primarytype=album&sort=release-date&fmt=json`, {
             method: 'GET',
             headers: {
                 'user-agent': 'Wonderwall/<1.0> ( morgs99@gmail.com )'

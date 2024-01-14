@@ -18,7 +18,8 @@ router.get('/artist/:id', withAuth, async (req, res) => {
         });
 
         const artist = artistData.get({ plain: true });
-        res.render('artist', { artist });
+        // res.render('artist', { artist });
+        res.json(artist);
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
