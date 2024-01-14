@@ -1,0 +1,10 @@
+<section class="container">
+    <div class="card bg-dark search-card">
+        <h3 class="header artist-name">{{artist.name}}</h3>
+        <h4 class="d-flex justify-content-end">Search</h4>
+        <div class="album-list">Albums</div>
+        {{#each artist.album as |album|}}
+        {{> album-details}}
+        {{/each}}
+    </div>
+</section>
