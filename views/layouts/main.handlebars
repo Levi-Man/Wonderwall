@@ -27,8 +27,11 @@
       </nav>
     </header>
     <main class="container container-fluid mt-5">
-      <!-- Main Page, 3 Columns of Partials -->
+
       {{> search-details}}
+
+      <!-- Main Page, 3 Columns of Partials -->
+
       {{{ body }}}
 
     </main>
@@ -40,8 +43,10 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+
   {{/if}}
   <script src="/js/search.js"></script>
+
 </body>
 
 </html>

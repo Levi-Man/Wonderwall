@@ -81,3 +81,13 @@ a {
   background-color: var(--light);
   color: red;
 }
+
+.chart-item {
+  color: white;
+  list-style-type: none;
+}
+
+.chart-item,
+li {
+  padding: 10px;
+}
