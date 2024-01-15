@@ -3,6 +3,17 @@
     <h2>1994 Billboard Top 10</h2>
     <ul class="chart-list" id="chart-list">
 
+        {{#each years as |year|}}
+
+        <li class="chart-item" id="">
+            {{year.rank}}
+            {{year.title}}
+            {{year.artist}}
+            <img src={{year.cover}} alt="" height="35" width="35">
+        </li>
+
+
+        {{/each}}
+
     </ul>
 </div>
-<script src="public/js/chart-script.js"></script>
