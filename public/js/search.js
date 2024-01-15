@@ -41,20 +41,20 @@ console.log(artistInput, songInput, yearInput);
 //     });
 //   });
 
-const apiUrl = 'https://musicbrainz.org/ws/2/artist/?';
+const apiUrl = 'https://musicbrainz.org/ws/2/';
 const query = [];
 
 if (artistInput) {
-  query.push(`artist:${encodeURIComponent(artistInput)}`);
+  query.push(`artist/?query=artist:${encodeURIComponent(artistInput)}`);
 }
 if (songInput) {
-  query.push(`recording:${encodeURIComponent(songInput)}`);
+  query.push(`recording/?query=recording:${encodeURIComponent(songInput)}`);
 }
 if (yearInput) {
-  query.push(`date:${encodeURIComponent(yearInput)}`);
+
 }
 
-const fullUrl = apiUrl + 'query=' + query.join('%20AND%20') + '&fmt=json';
+const fullUrl = apiUrl + query.join('&') + '&fmt=json';
 
 try {
   const response = await fetch(fullUrl, {
