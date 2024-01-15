@@ -28,18 +28,9 @@
     </header>
     <main class="container container-fluid mt-5">
       <!-- Main Page, 3 Columns of Partials -->
-      <div class="row">
+      {{> search-details}}
+      {{{ body }}}
 
-        {{!-- First column, User Profile --}}
-        {{> user-details}}
-
-        {{!-- 2nd Column, Artist Profile --}}
-        <div class="col-md-6 card bg-white">
-          {{{ body }}}
-        </div>
-
-        {{!-- 3rd Column, Chart Profile --}}
-        {{> chart-details}}
     </main>
     <footer>
 

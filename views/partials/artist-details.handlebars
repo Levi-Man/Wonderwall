@@ -1,0 +1,12 @@
+<div class="col-md-6 card bg-white">
+  {{#each artists as |artist| }}
+  <div class="row mb-4 artist">
+    <div class="col-md-5">
+      <h2>
+        <a href="/artist/{{artist.id}}">{{artist.name}}</a>
+      </h2>
+      <p>Created by {{artist.user.name}}</p>
+    </div>
+  </div>
+  {{/each}}
+</div>
