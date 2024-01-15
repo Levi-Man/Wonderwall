@@ -71,16 +71,26 @@ router.delete('/:id', withAuth, async (req, res) => {
 });
 
 router.get('/search', async (req, res) => {
-  const { artistInput, songInput, yearInput } = req.query;
+  const { artist, release, year} = req.query;
 
+  if (query.artist) { 
+    querystring = `artist:${artistInput}`;
+    query = `artist:${query.artist}`
+} else if (query.song) {
+    querystring = `release=${songInput}`;
+    query = `release=${query.song}`
+} else if (query.year) {
+    querystring = `year=${yearInput}`;
+    query =  `year:${query.year}`
+}
   try {
-    const response = await fetch(`http://musicbrainz.org/ws/2/release/?query=artist:${artistInput}+recording:${songInput}+date:${yearInput}&fmt=json`, {
+    const response = await fetch(`http://musicbrainz.org/ws/2/artist/?query=${query}%20AND%20&fmt=json`, {
       method: 'GET',
       headers: {
         'user-agent': 'Wonderwall/1.0 (indra.levi.manahan@gmail.com)',
       },
     });
-
+console.log(response);
     if (response.ok) {
       const data = await response.json();
       const artistAlbums = data.releases;
