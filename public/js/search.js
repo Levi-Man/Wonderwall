@@ -50,9 +50,10 @@ if (artistInput) {
 if (songInput) {
   query.push(`recording/?query=recording:${encodeURIComponent(songInput)}`);
 }
-if (yearInput) {
-
-}
+    if (yearInput) {
+      console.log(yearInput);
+      document.location.replace(`/year/${yearInput}`);
+    }
 
 const fullUrl = apiUrl + query.join('&') + '&fmt=json';
 
@@ -62,17 +63,6 @@ try {
     headers: {
       'user-agent': 'Wonderwall/1.0 (indra.levi.manahan@gmail.com)',
     },
-  });
 
-  if (response.ok) {
-    const data = await response.json();
-    console.log(data);
-    
-  } else {
-    console.error(`Error: ${response.status}`);
-  }
-} catch (error) {
-  console.error('Error:', error.message);
-}
-});
+  });
 });

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Artist, User } = require('../models');
 const withAuth = require('../utils/auth');
+const { getChart } = require('billboard-top-100');
 
 router.get('/', async (req, res) => {
   try {
@@ -47,6 +48,28 @@ router.get('/profile', withAuth, async (req, res) => {
       logged_in: true
     });
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/year/:id', async (req, res) => {
+  try {
+    console.log('hello');
+    await getChart('hot-100', `${req.params.id}-01-01`, (err, chart) => {
+      if (err) console.log(err);
+
+      const filteredChart = chart.songs.filter((c) => c.rank < 11);
+
+      const printYear = (req.params.id);
+
+      res.render('homepage', {
+        years: filteredChart, printYear
+      })
+
+    }
+    )
+  } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
