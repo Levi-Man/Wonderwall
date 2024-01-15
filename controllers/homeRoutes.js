@@ -29,40 +29,7 @@ router.get('/', async (req, res) => {
 
 
 
-router.get('/artist/:id', async (req, res) => {
-  try {
-    const artistData = await fetch(`http://musicbrainz.org/ws/2/artist/?query=${req.params.id}&method=indexed&inc=aliases&fmt=json`, {
-      method: 'GET',
-      headers: {
-        'user-agent': 'Wonderwall/<1.0> ( morgs99@gmail.com )'
-      }
-    });
-    // console.log(artistData);
-    const jsonArtist = await artistData.json();
-    const artistName = jsonArtist["artists"][0].name;
-    const releasesData = await fetch(`http://musicbrainz.org/ws/2/release/?query=arid:${jsonArtist["artists"][0].id}&primarytype=Album&fmt=json`, {
-      method: 'GET',
-      headers: {
-        'user-agent': 'Wonderwall/<1.0> ( morgs99@gmail.com )'
-      }
-    });
-    const jsonReleases = await releasesData.json();
-    const albums = jsonReleases.releases.map(release => ({
-      title: release.title,
-      releaseDate: release.date,
-    }));
-    const responseData = {
-      artistName,
-      albums,
-    };
-    res.render('artist', {
-      ...artist,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {

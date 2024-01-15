@@ -10,7 +10,7 @@
       const yearInput = document.getElementById('year-search').value;
 
       try {
-        const response = await fetch(`http://musicbrainz.org/ws/2/release/?query=artist:${artistInput}+recording:${songInput}+date:${yearInput}&fmt=json`, {
+        const response = await fetch(`/search?artistInput=${artistInput}&songInput=${songInput}&yearInput=${yearInput}`, {
           method: 'GET',
           headers: {
             'user-agent': 'Wonderwall/1.0 (indra.levi.manahan@gmail.com)',

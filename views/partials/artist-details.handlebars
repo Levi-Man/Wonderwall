@@ -1,12 +1,16 @@
 <div class="col-md-6 card bg-white">
-  {{#each artists as |artist| }}
+  {{#if artists.length}}
+  {{#each albums as |album| }}
   <div class="row mb-4 artist">
     <div class="col-md-5">
       <h2>
-        <a href="/artist/{{artist.id}}">{{artist.name}}</a>
+        <a href="/artist/{{album.id}}">{{album.title}}</a>
       </h2>
-      <p>Created by {{artist.user.name}}</p>
+      <p>Release Date: {{album.releaseDate}}</p>
     </div>
   </div>
   {{/each}}
+   {{else}}
+    <p>No artists found for the given search criteria.</p>
+  {{/if}}
 </div>
