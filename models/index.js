@@ -1,46 +1,13 @@
-const Album = require('./Album');
+const User = require('./User');
 const Artist = require('./Artist');
-const Genre = require('./Genre');
-const Song = require('./Song');
-const Year = require('./Year');
 
-// -- artists would have many songs, would have many genres, would have many albums
-Artist.hasMany(Song, {
-    foreignKey: 'artist_id',
+User.hasMany(Artist, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
-Song.belongsTo(Artist, {
-    foreignKey: 'artist_id'
+Artist.belongsTo(User, {
+  foreignKey: 'user_id'
 });
 
-Artist.hasMany(Genre, {
-    foreignKey: 'artist_id',
-});
-
-Genre.belongsTo(Artist, {
-    foreignKey: 'artist_id'
-});
-
-Artist.hasMany(Album, {
-    foreignKey: 'artist_id',
-});
-
-Album.belongsTo(Artist, {
-    foreignKey: 'artist_id'
-});
-
-
-// -- genre has many artists
-
-
-// -- year has many songs
-
-
-// -- album has one artist, has one year
-
-
-// -- song has one artist
-
-
-
-module.exports = { Album, Artist, Genre, Song, Year };
+module.exports = { User, Artist };
