@@ -44,4 +44,4 @@ document
 
 document
   .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+  // .addEventListener('click', delButtonHandler);
