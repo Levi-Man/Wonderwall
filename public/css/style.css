@@ -99,7 +99,7 @@ input {
 
 
 /* ARTIST ITEMS */
-.artistName {
+#artistName {
   font-family: var(--title);
   font-size: 350%;
 }
