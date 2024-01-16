@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //         console.error('Error:', error.message);
         //       }
         //     });
+        // comment
         //   });
 
         const apiUrl = 'https://musicbrainz.org/ws/2/';
