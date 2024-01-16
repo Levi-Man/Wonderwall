@@ -3,14 +3,14 @@
   {{#if artists}}
   <div class="row mb-4 artist">
     <div class="col-md-12">
-      <h2 class="artistName" id="artistName">{{artist.name}}</h2>
+      <h2 class="artistName" >{{artist.name}}</h2>
       <p class="artistCountry">{{artist.country}}</p>
       <p class="artistLifespan">{{artist.life-span.name}}</p>
 
     </div>
   </div>
   {{else}}
-  <p>No Artist Searched.</p>
+  <p id="artistName">No Artist Searched.</p>
   {{/if}}
 
 
