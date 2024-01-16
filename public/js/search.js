@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
                 console.log(data)
                 console.log(data.artists[0].name);
-                const artistNameElement = document.getElementsByClassName('artistName')
+                const artistNameElement = document.getElementById('artistName')
                 console.log("artistNameElement", artistNameElement)
-                if (artistNameElement.length > 0) {
-                    artistNameElement[0].innerHTML = data.artists[0].name;
+                if (artistNameElement > 0) {
+                    artistNameElement.innerHTML = data.artists[0].name;
                 } else {
                     console.error('No elements with the class "artistName" found.');
                 }
