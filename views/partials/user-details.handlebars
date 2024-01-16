@@ -1,23 +1,42 @@
 <!-- USER DATA -->
 <div class="col-md-3 card bg-dark">
-    <h3 class="header">Username</h3>
-    <h4>Saved Artists</h4>
+    <h2>Username</h2>
 
-    <h4>Saved Songs</h4>
 
-    <h4>Favorite Genre</h4>
-
-    <h4>Saved Top 10</h4>
-    <ul>
-        <li>Song 1</li>
-        <li>Song 2</li>
-        <li>Song 3</li>
-        <li>Song 4</li>
-        <li>Song 5</li>
-        <li>Song 6</li>
-        <li>Song 7</li>
-        <li>Song 8</li>
-        <li>Song 9</li>
-        <li>Song 10</li>
-    </ul>
+    <h4><a href="">Saved Artists</a></h4>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle mt-1 mb-5" type="button" data-bs-toggle="dropdown"
+            aria-expanded="true">
+            Artists
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="/artist/Nirvana">Nirvana</a></li>
+            <li class="dropdown-item"><a href="/artist/Nsync">N*Sync</a></li>
+            <li class="dropdown-item"><a href="/artist/Gwar">Gwar</a></li>
+        </ul>
+    </div>
+    <h4><a href="">Saved Songs</a></h4>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle mt-1 mb-5" type="button" data-bs-toggle="dropdown"
+            aria-expanded="true">
+            Songs
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="/song/Jeremy">Jeremy</a></li>
+            <li class="dropdown-item"><a href="/song/I%20want%20it%20that%20way">I want it that way</a></li>
+            <li class="dropdown-item"><a href="/song/Butterfly">Butterfly</a></li>
+        </ul>
+    </div>
+    <h4><a href="">Saved Top 10</a></h4>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle mt-1 mb-5" type="button" data-bs-toggle="dropdown"
+            aria-expanded="true">
+            Charts
+        </button>
+        <ul class="dropdown-menu">
+            <li class="dropdown-item"><a href="/year/1990">1990</a></li>
+            <li class="dropdown-item"><a href="/year/1994">1994</a></li>
+            <li class="dropdown-item"><a href="/year/1999">1999</a></li>
+        </ul>
+    </div>
 </div>
