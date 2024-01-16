@@ -66,23 +66,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
                 console.log(data)
                 console.log(data.artists[0].name);
-                const artistNameElement = document.getElementsByClassName('artistName')
-                if (artistNameElement.length > 0) {
-                    artistNameElement[0].innerHTML = data.artists[0].name;
+                const artistNameElement = document.getElementById('artistName')
+                console.log("artistNameElement", artistNameElement)
+                if (artistNameElement) {
+                    artistNameElement.innerHTML = data.artists[0].name;
                 } else {
                     console.error('No elements with the class "artistName" found.');
                 }
 
-                const artistCountryElement = document.getElementsByClassName('artistCountry')
-                if (artistCountryElement.length > 0) {
-                    artistCountryElement[0].innerHTML = `Country: ${data.artists[0].country}`;
+                const artistCountryElement = document.getElementById('artistCountry')
+                if (artistCountryElement) {
+                    artistCountryElement.innerHTML = `Country: ${data.artists[0].country}`;
                 } else {
                     console.error('No elements with the class "artistCountry" found.');
                 }
 
-                const artistLifespanElement = document.getElementsByClassName('artistLifespan')
-                if (artistLifespanElement.length > 0) {
-                    artistLifespanElement[0].innerHTML =`Years: ${data.artists[0]["life-span"].begin} until ${data.artists[0]["life-span"].end}`;
+                const artistLifespanElement = document.getElementById('artistLifespan')
+                if (artistLifespanElement) {
+                    artistLifespanElement.innerHTML =`Years: ${data.artists[0]["life-span"].begin} until ${data.artists[0]["life-span"].end}`;
                 } else {
                     console.error('No elements with the class "artistLifespan" found.');
                 }
