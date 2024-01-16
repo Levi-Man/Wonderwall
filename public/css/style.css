@@ -50,9 +50,19 @@ a {
   text-decoration: none;
 }
 
+
 a:hover {
   color: var(--secondary);
 }
+
+.user-profile {
+  color: var(--light)
+}
+
+/* a:visited {
+  color: inherit;
+} */
+
 
 .background-video {
   position: absolute;
