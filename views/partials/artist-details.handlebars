@@ -1,17 +1,24 @@
-<!-- ARTIST DATA -->
 <div class="col-md-6 card bg-white">
-  {{#if artists.length}}
-  {{#each albums as |album| }}
-  <div class="row mb-4 artist">
-    <div class="col-md-5">
-      <h2>
-        <a href="/artist/{{album.id}}">{{album.title}}</a>
-      </h2>
-      <p>Release Date: {{album.releaseDate}}</p>
+ 
+    <div class="row mb-4 artist">
+      <div class="col-md-5">
+        <h2 class="artistName">{{artist.name}}</h2>
+        <p class="artistCountry">{{artist.country}}</p>
+        <p class="artistLifespan">{{artist.life-span.name}}</p>
+        
+      </div>
     </div>
-  </div>
-  {{/each}}
-   {{else}}
-    <p>No artists found for the given search criteria.</p>
-  {{/if}}
+
+    {{#if artist.albums.length}}
+      <h3>Albums:</h3>
+      <ul>
+        {{#each artist.albums as |album|}}
+          <li>{{album.title}} (Release Date: {{album.releaseDate}})</li>
+         
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>No further details.</p>
+    {{/if}}
+  
 </div>
