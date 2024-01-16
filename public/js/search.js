@@ -6,9 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         const artistInput = document.getElementById('artist-search').value;
-        const songInput = document.getElementById('song-search').value;
         const yearInput = document.getElementById('year-search').value;
-        console.log(artistInput, songInput, yearInput);
+        // console.log(artistInput, songInput, yearInput);
 
         // let querystring="";
 
@@ -47,9 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (artistInput) {
             query.push(`artist/?query=artist:${encodeURIComponent(artistInput)}`);
         }
-        if (songInput) {
-            query.push(`recording/?query=recording:${encodeURIComponent(songInput)}`);
-        }
+
         if (yearInput) {
             console.log(yearInput);
             document.location.replace(`/year/${yearInput}`);
