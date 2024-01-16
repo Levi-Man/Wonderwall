@@ -1,13 +1,12 @@
 <!-- CHART DATA -->
-<div class="col-12 card bg-dark">
+<div class="col-3 card bg-dark">
     <h2>{{printYear}} Billboard Top 10</h2>
     <ul class="chart-list" id="chart-list">
 
         {{#each years as |year|}}
 
         <li class="chart-item" id="">
-            <p>{{year.rank}}: {{year.title}}</p>
-            <p><a href="/artist/{{year.artist}}">{{year.artist}}</a></p>
+            <p>{{year.rank}}: {{year.title}} - <a href="/artist/{{year.artist}}">{{year.artist}}</a></p>
 
             <img src={{year.cover}} alt="" height="35" width="35">
         </li>
