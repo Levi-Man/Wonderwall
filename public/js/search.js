@@ -76,14 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const artistCountryElement = document.getElementById('artistCountry')
                 if (artistCountryElement) {
-                    artistCountryElement[0].innerHTML = `Country: ${data.artists[0].country}`;
+                    artistCountryElement.innerHTML = `Country: ${data.artists[0].country}`;
                 } else {
                     console.error('No elements with the class "artistCountry" found.');
                 }
 
                 const artistLifespanElement = document.getElementById('artistLifespan')
                 if (artistLifespanElement) {
-                    artistLifespanElement[0].innerHTML =`Years: ${data.artists[0]["life-span"].begin} until ${data.artists[0]["life-span"].end}`;
+                    artistLifespanElement.innerHTML =`Years: ${data.artists[0]["life-span"].begin} until ${data.artists[0]["life-span"].end}`;
                 } else {
                     console.error('No elements with the class "artistLifespan" found.');
                 }
