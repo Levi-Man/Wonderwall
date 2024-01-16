@@ -64,6 +64,10 @@ a {
   text-decoration: none;
 }
 
+.user-profile {
+  color: var(--light)
+}
+
 /* a:visited {
   color: inherit;
 } */
