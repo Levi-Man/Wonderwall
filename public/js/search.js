@@ -74,14 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.error('No elements with the class "artistName" found.');
                 }
 
-                const artistCountryElement = document.getElementsByClassName('artistCountry')
+                const artistCountryElement = document.getElementById('artistCountry')
                 if (artistCountryElement.length > 0) {
                     artistCountryElement[0].innerHTML = `Country: ${data.artists[0].country}`;
                 } else {
                     console.error('No elements with the class "artistCountry" found.');
                 }
 
-                const artistLifespanElement = document.getElementsByClassName('artistLifespan')
+                const artistLifespanElement = document.getElementById('artistLifespan')
                 if (artistLifespanElement.length > 0) {
                     artistLifespanElement[0].innerHTML =`Years: ${data.artists[0]["life-span"].begin} until ${data.artists[0]["life-span"].end}`;
                 } else {
