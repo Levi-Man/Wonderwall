@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(data)
                 console.log(data.artists[0].name);
                 const artistNameElement = document.getElementsByClassName('artistName')
+                console.log("artistNameElement", artistNameElement)
                 if (artistNameElement.length > 0) {
                     artistNameElement[0].innerHTML = data.artists[0].name;
                 } else {
