@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
         //         console.error('Error:', error.message);
         //       }
         //     });
-        // comment
         //   });
 
         const apiUrl = 'https://musicbrainz.org/ws/2/';
@@ -78,14 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (artistCountryElement.length > 0) {
                     artistCountryElement[0].innerHTML = `Country: ${data.artists[0].country}`;
                 } else {
-                    console.error('No elements with the class "artistName" found.');
+                    console.error('No elements with the class "artistCountry" found.');
                 }
 
                 const artistLifespanElement = document.getElementsByClassName('artistLifespan')
                 if (artistLifespanElement.length > 0) {
                     artistLifespanElement[0].innerHTML =`Years: ${data.artists[0]["life-span"].begin} until ${data.artists[0]["life-span"].end}`;
                 } else {
-                    console.error('No elements with the class "artistName" found.');
+                    console.error('No elements with the class "artistLifespan" found.');
                 }
 
             } else {
